@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="inferno">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Demon Scroll — High-fidelity sculpted vector creature animation with sharpened edges, anatomical depth planes, bloom lighting, and structural codex insights." />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#080306" />
+  <title>Demon Scroll — Sculpted Vector Anatomy & Cinematic Experience</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Floating HUD -->
+  <header class="hud-header" id="main-hud">
+    <div class="hud-badge" id="brand-badge">
+      <div class="brand-title">
+        <span class="brand-dot"></span>
+        <span>Demon Scroll</span>
+      </div>
+      <div class="brand-divider"></div>
+      <div class="hud-counter" id="frame-counter" aria-label="Current frame indicator">
+        FRAME <b id="hud-frame-num">01</b> / <span id="hud-frame-total">98</span>
+      </div>
+    </div>
+
+    <!-- Theme Switcher Pills -->
+    <nav class="hud-theme-switcher" id="theme-nav" aria-label="Visual Theme Switcher">
+      <button type="button" class="theme-btn active" data-theme-target="inferno" id="btn-theme-inferno" title="Infernal Abyss Theme">
+        <span class="theme-swatch swatch-inferno"></span>
+        <span>Inferno</span>
+      </button>
+      <button type="button" class="theme-btn" data-theme-target="spectral" id="btn-theme-spectral" title="Spectral Oni Theme">
+        <span class="theme-swatch swatch-spectral"></span>
+        <span>Spectral</span>
+      </button>
+      <button type="button" class="theme-btn" data-theme-target="noir" id="btn-theme-noir" title="Monochrome Noir Theme">
+        <span class="theme-swatch swatch-noir"></span>
+        <span>Noir</span>
+      </button>
+      <button type="button" class="theme-btn" data-theme-target="classic" id="btn-theme-classic" title="Classic Scroll Theme">
+        <span class="theme-swatch swatch-classic"></span>
+        <span>Classic</span>
+      </button>
+    </nav>
+
+    <!-- Right Controls -->
+    <div class="hud-actions">
+      <!-- Structural Insights Toggle -->
+      <button type="button" class="hud-toggle-btn" id="btn-insights-toggle" title="Toggle Structural & Anatomical Insights (I)" aria-label="Toggle Insights">
+        <span class="pulse-indicator"></span>
+        <span>Insights</span>
+      </button>
+
+      <!-- Ambient Audio Toggle -->
+      <button type="button" class="action-icon-btn" id="btn-sound-toggle" title="Toggle Atmospheric Ambient Audio (M)" aria-label="Toggle Ambient Audio">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line class="sound-off-strike" x1="23" y1="9" x2="17" y2="15"></line>
+          <line class="sound-off-strike" x1="17" y1="9" x2="23" y2="15"></line>
+          <path class="sound-wave" d="M15.54 8.46a5 5 0 0 1 0 7.07" style="display:none;"></path>
+          <path class="sound-wave" d="M19.07 4.93a10 10 0 0 1 0 14.14" style="display:none;"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero / Atmospheric Entrance Overlay -->
+  <div class="hero-overlay" id="hero-overlay">
+    <div class="hero-title-wrap">
+      <div class="hero-tag">Chapter 01 &bull; Anatomical Awakening</div>
+      <h1 class="hero-title">DEMON SCROLL</h1>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-prompt">
+      <div class="mouse-icon">
+        <div class="wheel-dot"></div>
+      </div>
+      <span class="scroll-text">Scroll to Transcend</span>
+    </div>
+  </div>
+
+  <!-- Main Animation Canvas Viewport -->
+  <section id="reel" aria-label="Demon scroll vector animation">
+    <!-- Main Sculpted Vector Stage -->
+    <canvas id="stage" width="540" height="280"></canvas>
+    <!-- Atmospheric Particle Layer -->
+    <canvas id="particle-layer"></canvas>
+    <!-- Architectural Wireframe & Insights Layer -->
+    <canvas id="insight-layer"></canvas>
+    <!-- Vignette and Grain Filters -->
+    <div class="atmosphere-overlay"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Structural Anatomical Insights Overlay Cards -->
+    <div class="insights-container" id="insights-container" aria-live="polite">
+      <!-- Card 1: Cranial Horns -->
+      <div class="insight-card" id="card-horns" style="top: 18%; left: 8%;">
+        <div class="card-badge">ANATOMY // 01</div>
+        <div class="card-title">Cranial Horn Strata</div>
+        <div class="card-desc">Segmented volcanic obsidian crests. Multi-tiered shock-absorbing horn ridges channel thermal exhaust.</div>
+        <div class="card-stats">
+          <div class="stat-item"><span class="stat-label">Hardness</span><span class="stat-val">840 HV</span></div>
+          <div class="stat-item"><span class="stat-label">Thermal Limit</span><span class="stat-val">3,200°C</span></div>
+        </div>
+      </div>
+
+      <!-- Card 2: Wing Architecture -->
+      <div class="insight-card" id="card-wings" style="top: 22%; right: 8%;">
+        <div class="card-badge">ANATOMY // 02</div>
+        <div class="card-title">Biomechanical Wing Struts</div>
+        <div class="card-desc">Articulated carbon-chitin phalanges supporting vascularized aerodynamic membrane with thermal uplift veins.</div>
+        <div class="card-stats">
+          <div class="stat-item"><span class="stat-label">Tensile Str</span><span class="stat-val">420 MPa</span></div>
+          <div class="stat-item"><span class="stat-label">Lift Ratio</span><span class="stat-val">9.4 : 1</span></div>
+        </div>
+      </div>
+
+      <!-- Card 3: Volcanic Core -->
+      <div class="insight-card" id="card-core" style="bottom: 22%; left: 10%;">
+        <div class="card-badge">ANATOMY // 03</div>
+        <div class="card-title">Infernal Geothermal Core</div>
+        <div class="card-desc">Subterranean heart fissure venting bio-plasma across interlocking thoracic carapace armor plates.</div>
+        <div class="card-stats">
+          <div class="stat-item"><span class="stat-label">Core Heat</span><span class="stat-val">2,400°K</span></div>
+          <div class="stat-item"><span class="stat-label">Discharge</span><span class="stat-val">48.2 GW</span></div>
+        </div>
+      </div>
+
+      <!-- Card 4: Claws & Edges -->
+      <div class="insight-card" id="card-talons" style="bottom: 22%; right: 10%;">
+        <div class="card-badge">ANATOMY // 04</div>
+        <div class="card-title">Razor Metacarpal Edges</div>
+        <div class="card-desc">Dense crystalline obsidian claws with mitered shear bevels capable of severing basalt stone on impact.</div>
+        <div class="card-stats">
+          <div class="stat-item"><span class="stat-label">Edge Radius</span><span class="stat-val">0.08 μm</span></div>
+          <div class="stat-item"><span class="stat-label">Shear Force</span><span class="stat-val">14.8 kN</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Timeline Scrubber & Controls -->
+  <footer class="hud-bottom" id="hud-controls" aria-label="Animation playback controls">
+    <button type="button" class="play-toggle-btn" id="btn-play-pause" title="Play / Pause Animation Loop (Space)" aria-label="Play animation">
+      <svg id="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      <svg id="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+    </button>
+
+    <div class="scrubber-track-wrap" id="scrubber-wrap" role="slider" aria-label="Timeline Scrubber" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+      <div class="scrubber-track">
+        <div class="scrubber-progress" id="scrubber-fill"></div>
+      </div>
+      <div class="scrubber-thumb" id="scrubber-thumb"></div>
+    </div>
+
+    <div class="timeline-meta">
+      <span class="active-pct" id="hud-pct">0%</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="data/frames-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

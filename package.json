@@ -1,0 +1,10 @@
+{
+  "name": "demon-scroll",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scroll-driven demon vector animation",
+  "scripts": {
+    "dev": "vite --port 5173 --host",
+    "serve": "vite --port 5173 --host"
+  }
+}
